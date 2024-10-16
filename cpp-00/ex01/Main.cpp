@@ -6,11 +6,12 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 17:06:17 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/15 22:20:25 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/16 13:01:41 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <sstream>
 
 int main() {
 	PhoneBook	phonebook;
@@ -47,11 +48,8 @@ int main() {
 		} else if (command == "SEARCH") {
 			phonebook.displayContacts();
 			std::cout << "Enter index of contact to view: ";
-
 			std::string input;
 			std::getline(std::cin, input);
-
-			// Girdinin geçerli bir sayı olup olmadığını kontrol ediyoruz
 			std::stringstream ss(input);
 			int index;
 			if (ss >> index && ss.eof()) {
