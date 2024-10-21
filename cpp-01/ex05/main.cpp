@@ -5,32 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 16:45:07 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/19 03:03:16 by tkaragoz         ###   ########.fr       */
+/*   Created: 2024/10/21 11:21:01 by tkaragoz          #+#    #+#             */
+/*   Updated: 2024/10/21 13:25:36 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#include "harl.hpp"
 
-int main()
-{
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
+int	main(int argc, char **argv) {
 
-	return 0;
+	if (argc != 2 || !argv || !argv[1]) {
+		std::cout << "INCORRECT INTPUT" << std::endl;
+		return (1);
+	}
+	Harl::complain(argv[1]);
+	return (0);
 }
