@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 03:12:35 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/21 01:38:19 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:21:46 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void replaceStrings(std::ifstream &infile, std::ofstream &outfile, const std::st
 	std::string line;
 	while (std::getline(infile, line)) {
 		size_t pos = 0;
-		while ((pos = line.find(s1, pos)) != std::string::npos) {
+		while ((pos = line.replace(s1, s2)) != std::string::npos) {
 			line.erase(pos, s1.length());
 			line.insert(pos, s2);
 			pos += s2.length();
