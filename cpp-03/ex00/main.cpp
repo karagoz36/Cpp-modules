@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 17:52:09 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/25 16:26:11 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/25 17:13:07 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	main(void)
 	clap.attack("Target2");
 	clap.takeDamage(15);
 	clap.beRepaired(10);
-	std::cout << std::endl;
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 17:52:09 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/25 16:28:41 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/25 17:14:34 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(void)
 	clap.beRepaired(10);
 	std::cout << std::endl;
 
-	// ScavTrap sınıfını test edelim
+	// ScavTrap Testing
 	std::cout << "=== ScavTrap Testing ===" << std::endl;
 	ScavTrap scav("Guardian");
 
@@ -34,9 +34,8 @@ int	main(void)
 	scav.beRepaired(15);
 	scav.guardGate();
 	scav.attack("Enemy");
-	scav.takeDamage(100); // Sağlığı sıfırlayalım
-	scav.beRepaired(5);   // Enerji puanları yokken onarım denemesi
-	std::cout << std::endl;
+	scav.takeDamage(100); // Make health 0
+	scav.beRepaired(5);   // Reparing without health
 
 	return (0);
 }
