@@ -6,13 +6,13 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 20:17:01 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/26 16:59:24 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/26 18:00:00 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal() {
+Dog::Dog() : Animal(), brain(new Brain()) {
 	_type = "defaultDog";
 	std::cout << "Dog " << _type << " is created" << std::endl;
 }
