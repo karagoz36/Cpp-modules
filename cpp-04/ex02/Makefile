@@ -6,7 +6,7 @@
 #    By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/21 17:24:53 by tkaragoz          #+#    #+#              #
-#    Updated: 2024/10/28 19:58:51 by tkaragoz         ###   ########.fr        #
+#    Updated: 2024/10/28 20:02:29 by tkaragoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = Abstract
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRCS = main.cpp AAnimal.cpp Dog.cpp Cat.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -5,27 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 17:40:53 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/25 20:21:47 by tkaragoz         ###   ########.fr       */
+/*   Created: 2024/10/28 20:02:35 by tkaragoz          #+#    #+#             */
+/*   Updated: 2024/10/28 20:02:37 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AAnimal_HPP
+# define AAnimal_HPP
 
 # include <iostream>
 
-class Animal {
+class AAnimal {
 protected:
 	std::string _type;
 
 public:
-	Animal();
-	Animal(const Animal& other);
-	Animal &operator=(const Animal &other);
-	virtual ~Animal();
+	AAnimal();
+	AAnimal(const AAnimal& other);
+	AAnimal &operator=(const AAnimal &other);
+	virtual ~AAnimal();
 
-	virtual void makeSound() const;
+	virtual void makeSound() const = 0;
 	std::string getType() const;
 };
 

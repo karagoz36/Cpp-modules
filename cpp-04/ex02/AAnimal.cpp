@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,33 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal() : _type("Default") {
-	std::cout << "Animal " << _type << " is created" << std::endl;
+AAnimal::AAnimal() : _type("Default") {
+	std::cout << "AAnimal " << _type << " is created" << std::endl;
 }
 
-Animal::Animal(const Animal& other): _type(other._type) {
-	std::cout << "Animal " << _type << " has been copied" << std::endl;
+AAnimal::AAnimal(const AAnimal& other): _type(other._type) {
+	std::cout << "AAnimal " << _type << " has been copied" << std::endl;
 }
 
-Animal& Animal::operator=(const Animal &other) {
+AAnimal& AAnimal::operator=(const AAnimal &other) {
 	if (this != &other){
 		_type = other._type;
 	}
-	std::cout << "Animal " << _type << " has been assigned!" << std::endl;
+	std::cout << "AAnimal " << _type << " has been assigned!" << std::endl;
 	return (*this);
 }
 
-Animal::~Animal() {
-	std::cout << "Animal is destroyed" << std::endl;
+AAnimal::~AAnimal() {
+	std::cout << "AAnimal is destroyed" << std::endl;
 }
 
-void Animal::makeSound() const {
-	std::cout << "Animal makes a sound" << std::endl;
+void AAnimal::makeSound() const {
+	std::cout << "AAnimal makes a sound" << std::endl;
 }
 
-std::string Animal::getType() const {
+std::string AAnimal::getType() const {
 	return (_type);
 }
 
