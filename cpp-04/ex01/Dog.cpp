@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 20:17:01 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/28 13:54:21 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:49:15 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,16 @@ Dog::Dog() : brain(new Brain) {
 }
 
 Dog::Dog(const Dog& other) : brain(new Brain(*other.brain)){
-	 *this = other;
+	// *this = other;
 	std::cout << "Dog " << _type << " has been copied" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog &other) {
 	if (this != &other){
 		Animal::operator=(other);
+		*this->brain = *other.brain;
+		//delete brain;
+		//brain = new Brain(*other.brain);
 	}
 	std::cout << "Dog " << _type << " has been assigned!" << std::endl;
 	return (*this);

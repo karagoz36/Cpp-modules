@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 17:28:54 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/28 14:02:03 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:28:20 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Brain &Brain::operator=(const Brain &other) {
 			ideas[i] = other.ideas[i];
 		}
 	}
-	std::cout << "Brain assigned" << std::endl;
+	//std::cout << "Brain assigned" << std::endl;
 	return (*this);
 }
 

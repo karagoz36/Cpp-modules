@@ -21,8 +21,22 @@ int main() {
 	dog1->getBrain()->setIdea(0, "Chase the mailman!");
 	std::cout << std::endl;
 
-	Dog dog2 = *dog1;  // Test deep copy
+	Dog dog2(*dog1);
 	std::cout << std::endl;
+
+	std::cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$" << std::endl;
+	{
+	Dog dog3;
+	dog3.getBrain()->setIdea(0, "Another idea");
+	std::cout << "Dog3 Brain Idea[0]: " << dog3.getBrain()->getIdea(0) << std::endl;
+	dog3 = dog2;
+	std::cout << "Dog3 Brain Idea[0]: " << dog3.getBrain()->getIdea(0) << std::endl;
+	}
+	std::cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$" << std::endl;
+
+
+	// Dog dog2 = *dog1;  // Test deep copy
+	// std::cout << std::endl;
 
 	std::cout << "Dog1 Brain Idea[0]: " << dog1->getBrain()->getIdea(0) << std::endl;
 	std::cout << std::endl;
