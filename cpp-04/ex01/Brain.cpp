@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 17:28:54 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/26 17:50:27 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/28 14:02:03 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,12 @@ Brain::~Brain() {
 }
 
 std::string Brain::getIdea(int index) const {
-	return (index >= 0 && index < 100) ? ideas[index] : "";
+	return ((index >= 0 && index < 100) ? ideas[index] : "Index is between 0 and 99");
 }
 
 void Brain::setIdea(int index, const std::string &idea) {
 	if (index >= 0 && index < 100) {
 		ideas[index] = idea;
 	}
+	std::cout << "Idea " << index << " is created: " << idea << std::endl;
 }

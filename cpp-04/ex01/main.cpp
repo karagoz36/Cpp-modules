@@ -1,46 +1,41 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 17:24:53 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/26 17:10:17 by tkaragoz         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+#include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongCat.hpp"
 
-int main()
-{
-	std::cout << "=== Testing Animal Hierarchy ===" << std::endl;
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+int main() {
+	const Animal* animals[4];
 
-	std::cout << j->getType() << std::endl;
-	j->makeSound();
-	std::cout << i->getType() << std::endl;
-	i->makeSound(); //will output the cat sound!
-	meta->makeSound();
+	// Creating half dogs and half cats
+	animals[0] = new Dog();
+	std::cout << std::endl;
+	animals[1] = new Dog();
+	std::cout << std::endl;
+	animals[2] = new Cat();
+	std::cout << std::endl;
+	animals[3] = new Cat();
+	std::cout << std::endl;
 
-	delete meta;
-	delete j;
-	delete i;
+	// Setting and checking ideas
+	Dog *dog1 = new Dog();
+	std::cout << std::endl;
+	dog1->getBrain()->setIdea(0, "Chase the mailman!");
+	std::cout << std::endl;
 
-	std::cout << "\n=== Testing WrongAnimal Hierarchy ===" << std::endl;
-	const WrongAnimal* wrongMeta = new WrongAnimal();
-	const WrongAnimal* wrongCat = new WrongCat();
+	Dog dog2 = *dog1;  // Test deep copy
+	std::cout << std::endl;
 
-	std::cout << wrongCat->getType() << std::endl;
-	wrongCat->makeSound();
-	wrongMeta->makeSound();
+	std::cout << "Dog1 Brain Idea[0]: " << dog1->getBrain()->getIdea(0) << std::endl;
+	std::cout << std::endl;
+	std::cout << "Dog2 Brain Idea[0]: " << dog2.getBrain()->getIdea(0) << std::endl;
+	std::cout << std::endl;
 
-	delete wrongMeta;
-	delete wrongCat;
+	// Clean up
+	for (int i = 0; i < 4; ++i) {
+		delete animals[i];
+		std::cout << std::endl;
+	}
+	delete dog1;
+	std::cout << std::endl;
 
 	return (0);
 }

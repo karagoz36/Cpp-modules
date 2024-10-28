@@ -6,19 +6,19 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 20:17:01 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/26 18:00:00 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/28 13:54:21 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal(), brain(new Brain()) {
+Dog::Dog() : brain(new Brain) {
 	_type = "defaultDog";
 	std::cout << "Dog " << _type << " is created" << std::endl;
 }
 
-Dog::Dog(const Dog& other) : Animal(other) {
-	 _type = other._type;
+Dog::Dog(const Dog& other) : brain(new Brain(*other.brain)){
+	 *this = other;
 	std::cout << "Dog " << _type << " has been copied" << std::endl;
 }
 
@@ -32,8 +32,13 @@ Dog& Dog::operator=(const Dog &other) {
 
 Dog::~Dog() {
 	std::cout << "Dog is destroyed" << std::endl;
+	delete (brain);
 }
 
 void Dog::makeSound() const {
 	std::cout << "Dog makes a sound" << std::endl;
+}
+
+Brain *Dog::getBrain() const {
+	return (brain);
 }

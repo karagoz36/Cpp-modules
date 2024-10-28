@@ -6,16 +6,16 @@
 #    By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/21 17:24:53 by tkaragoz          #+#    #+#              #
-#    Updated: 2024/10/26 17:15:53 by tkaragoz         ###   ########.fr        #
+#    Updated: 2024/10/28 12:06:07 by tkaragoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Animal
+NAME = Brain
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.hpp Brain.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
