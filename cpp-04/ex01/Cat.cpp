@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 20:27:43 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/28 17:18:06 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/28 19:08:34 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Cat& Cat::operator=(const Cat &other) {
 		delete brain;
 		brain = new Brain(*other.brain);
 	}
-	std::cout << "Cat " << _type << " has been assigned!" << std::endl;
+	//std::cout << "Cat " << _type << " has been assigned!" << std::endl;
 	return (*this);
 }
 
