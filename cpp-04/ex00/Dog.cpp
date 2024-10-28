@@ -6,18 +6,18 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 20:17:01 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/26 16:59:24 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/28 11:49:35 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal() {
+Dog::Dog() /*: Animal()*/ {
 	_type = "defaultDog";
 	std::cout << "Dog " << _type << " is created" << std::endl;
 }
 
-Dog::Dog(const Dog& other) : Animal(other) {
+Dog::Dog(const Dog& other) /*: Animal(other)*/ {
 	 _type = other._type;
 	std::cout << "Dog " << _type << " has been copied" << std::endl;
 }

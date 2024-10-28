@@ -6,19 +6,19 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 20:27:43 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/26 17:00:06 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/28 11:52:37 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal() {
+Cat::Cat() /*: Animal()*/ {
 	_type = "defaultCat";
 	std::cout << "Cat " << _type << " is created" << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal(other) {
-	 _type = other._type;
+Cat::Cat(const Cat& other) /*: Animal(other)*/ {
+	 *this = other;
 	std::cout << "Cat " << _type << " has been copied" << std::endl;
 }
 

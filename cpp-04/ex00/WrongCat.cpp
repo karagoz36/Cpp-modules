@@ -6,18 +6,18 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:30:53 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/26 17:03:42 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/28 11:48:26 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() : WrongAnimal() {
+WrongCat::WrongCat() /*: WrongAnimal()*/ {
 	_type = "defaultWrongCat";
 	std::cout << "WrongCat " << _type << " is created" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other) {
+WrongCat::WrongCat(const WrongCat& other) /*: WrongAnimal(other)*/ {
 	 _type = other._type;
 	std::cout << "WrongCat " << _type << " has been copied" << std::endl;
 }
