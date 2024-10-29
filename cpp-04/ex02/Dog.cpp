@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 20:17:01 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/28 20:06:19 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/29 11:58:16 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Dog& Dog::operator=(const Dog &other) {
 	if (this != &other){
 		AAnimal::operator=(other);
 	}
-	//std::cout << "Dog " << _type << " has been assigned!" << std::endl;
+	std::cout << "Dog " << _type << " has been assigned!" << std::endl;
 	return (*this);
 }
 

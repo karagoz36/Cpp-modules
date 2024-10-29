@@ -6,17 +6,19 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 19:59:09 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/28 20:07:07 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/29 11:58:54 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include <iostream>
 
 int main() {
+
 	//const AAnimal a;
+	//AAnimal* animal = new AAnimal();
+	//Abstract class AAnimal cannot be instantiated.
+
 	const AAnimal* dog = new Dog();
 	const AAnimal* cat = new Cat();
 

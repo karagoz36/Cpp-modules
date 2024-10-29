@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 20:27:43 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/28 20:05:59 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/29 11:58:07 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Cat& Cat::operator=(const Cat &other) {
 	if (this != &other){
 		AAnimal::operator=(other);
 	}
-	//std::cout << "Cat " << _type << " has been assigned!" << std::endl;
+	std::cout << "Cat " << _type << " has been assigned!" << std::endl;
 	return (*this);
 }
 

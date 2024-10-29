@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:42:31 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/28 20:05:38 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/29 11:58:28 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "AAnimal.hpp"
 
 class Dog : public AAnimal {
+
 public:
 	Dog();
 	Dog(const Dog& other);
