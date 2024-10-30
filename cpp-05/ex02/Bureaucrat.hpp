@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 14:27:44 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/30 15:21:03 by tkaragoz         ###   ########.fr       */
+/*   Created: 2024/10/30 19:05:08 by tkaragoz          #+#    #+#             */
+/*   Updated: 2024/10/30 19:05:47 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <iostream>
 # include <string>
 # include <stdexcept>
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 class Bureaucrat {
 
 private:
@@ -38,7 +38,7 @@ public:
 
 	void		incrementGrade();
 	void		decrementGrade();
-	void		signForm(Form& form) const;
+	void		signForm(AForm& form) const;
 
 	class		GradeTooHighException;
 	class 		GradeTooLowException;

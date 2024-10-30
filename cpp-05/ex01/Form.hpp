@@ -6,23 +6,24 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 18:41:51 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/29 18:59:33 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/30 15:42:47 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#pragma once
 
-# include <iostream>
-# include "Bureaucrat.hpp"
+#include <iostream>
+#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form {
 
 private:
 	const std::string	_name;
+	bool				_isSigned;
 	const int			_gradeSign;
 	const int			_gradeExecute;
-	bool				_isSigned;
 
 public:
 	Form();
@@ -31,15 +32,15 @@ public:
 	Form& operator=(const Form& other);
 	~Form();
 
+	void		beSigned(const Bureaucrat& bureaucrat);
 
-	void	beSigned(const Bureaucrat& bureaucrat);
+	std::string	getName() const;
+	bool		isSigned() const;
+	int			getGradeSign() const;
+	int			getGradeExecute() const;
 
-	std::string getName() const;
-	bool isSigned() const;
-	int getGradeSign() const;
-	int getGradeExecute() const;
+	class		GradeTooHighException;
+	class		GradeTooLowException;
 };
 
-std::ostream& operator<<(std::ostream& os, const Form& form);
-
-#endif
+std::ostream&	operator<<(std::ostream& os, const Form& form);

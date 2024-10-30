@@ -6,48 +6,61 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 15:59:40 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/29 18:08:50 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/30 18:25:26 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-int	main(void) {
+int main() {
 	try {
-		Bureaucrat validPerson("Cool Guy", 10);
-		std::cout << validPerson << std::endl;
-		validPerson.decrementGrade();
-		std::cout << validPerson << std::endl;
-		validPerson.incrementGrade();
-		validPerson.incrementGrade();
-		std::cout << validPerson << std::endl;
+		Bureaucrat alice("Alice", 50);
+		Bureaucrat bob("Bob", 100);
+
+		Form formA("FormA", 75, 50);
+		Form formB("FormB", 120, 100);
+
+		std::cout << alice << std::endl;
+		std::cout << bob << std::endl;
+		std::cout << formA << std::endl;
+		std::cout << formB << std::endl;
 	}
 	catch (const std::exception& e) {
-		std::cerr << e.what() << std::endl;
+		std::cerr << "Exception: " << e.what() << std::endl;
 	}
+
 	try {
-		Bureaucrat highRanker("The Lawyer", 1);
-		std::cout << highRanker << std::endl;
-		highRanker.incrementGrade();
+		Bureaucrat alice("Alice", 50);
+		Bureaucrat bob("Bob", 100);
+
+		Form formA("FormA", 75, 50);
+		Form formB("FormB", 120, 100);
+
+		bob.signForm(formA);
+		alice.signForm(formA);
+
+		bob.signForm(formB);
+
+		std::cout << formA << std::endl;
+		std::cout << formB << std::endl;
 	}
 	catch (const std::exception& e) {
-		std::cerr << e.what() << std::endl;
+		std::cerr << "Exception: " << e.what() << std::endl;
 	}
+
 	try {
-		Bureaucrat lowRanker("Bartleby, the Scrivener", 150);
-		std::cout << lowRanker << std::endl;
-		lowRanker.decrementGrade();
+		Form highForm("HighForm", 0, 50);
 	}
 	catch (const std::exception& e) {
-		std::cerr << e.what() << std::endl;
+		std::cerr << "Exception: " << e.what() << " (HighForm creation failed)" << std::endl;
 	}
+
 	try {
-		std::cout << "Test for The Narrator (200)" <<std::endl;
-		Bureaucrat invalid("The Narrator", 200);
-		std::cout << invalid <<std::endl;
+		Form lowForm("LowForm", 151, 50);
 	}
 	catch (const std::exception& e) {
-		std::cerr << e.what() << std::endl;
+		std::cerr << "Exception: " << e.what() << " (LowForm creation failed)" << std::endl;
 	}
 
 	return (0);
