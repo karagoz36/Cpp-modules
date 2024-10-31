@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:26:17 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/31 15:53:11 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:54:21 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,5 +126,5 @@ int main() {
 	catch (const std::exception& e) {
 		std::cerr << "Unexpected error: " << e.what() << std::endl;
 	}
-	return 0;
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:24:24 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/31 15:14:34 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:56:00 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,15 @@ void ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
 		throw GradeTooLowException();
 	std::ofstream outfile((_target + "_shrubbery").c_str());
 	if (outfile.is_open()) {
+		outfile << "       _-_\n";
+		outfile << "    /~~   ~~\\\n";
+		outfile << " /~~         ~~\\\n";
+		outfile << "{               }\n";
+		outfile << " \\  _-     -_  /\n";
+		outfile << "   ~  \\\\ //  ~\n";
+		outfile << "_- -   | | _- _\n";
+		outfile << "  _ -  | |   -_\n";
+		outfile << "       | |\n\n\n";
 		outfile << "       _-_\n";
 		outfile << "    /~~   ~~\\\n";
 		outfile << " /~~         ~~\\\n";

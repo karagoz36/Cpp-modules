@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 14:27:44 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/30 15:21:03 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:58:56 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <iostream>
 # include <string>
-# include <stdexcept>
 # include "Form.hpp"
 
 class Form;
