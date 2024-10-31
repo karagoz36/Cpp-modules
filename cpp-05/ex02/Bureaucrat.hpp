@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 19:05:08 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/30 19:05:47 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/31 14:55:17 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ public:
 	void		incrementGrade();
 	void		decrementGrade();
 	void		signForm(AForm& form) const;
+	void		executeForm(const AForm& form) const;
 
 	class		GradeTooHighException;
 	class 		GradeTooLowException;

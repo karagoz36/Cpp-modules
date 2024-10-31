@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 14:34:51 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/30 19:06:02 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:38:53 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name), _grade
 		throw Bureaucrat::GradeTooHighException();
 	else if (_grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	//std::cout << *this << " is created by constructor" << std::endl;
-
+	std::cout << *this << " is created by constructor" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) {
@@ -90,5 +89,15 @@ void Bureaucrat::signForm(AForm& form) const {
 		std::cout	<< _name << " couldn't sign " << form.getName()
 					<< " beacause " << e.what() << std::endl;
 
+	}
+}
+
+void Bureaucrat::executeForm(const AForm& form) const {
+	try {
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	}
+	catch (const std::exception& e) {
+		std::cerr << _name << " couldn't execute " << form.getName() << " beacause " << e.what() << std::endl;
 	}
 }

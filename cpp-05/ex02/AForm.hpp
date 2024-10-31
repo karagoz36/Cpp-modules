@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 19:04:54 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/10/30 19:20:07 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/10/31 14:37:58 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,18 @@ public:
 	int			getGradeSign() const;
 	int			getGradeExecute() const;
 
-	class		GradeTooHighException;
-	class		GradeTooLowException;
-	class		FormNotSignedException;
+	class GradeTooHighException : public std::exception {
+		public:
+			const char* what() const throw();
+	};
+	class GradeTooLowException : public std::exception {
+	public:
+		const char* what() const throw();
+	};
+	class NotSignedException : public std::exception {
+	public:
+		const char* what() const throw();
+	};
 };
 
-std::ostream&	operator<<(std::ostream& os, const AForm& aform);
+std::ostream&	operator<<(std::ostream& os, const AForm& form);
