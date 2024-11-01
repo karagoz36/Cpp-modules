@@ -1,0 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/01 15:04:48 by tkaragoz          #+#    #+#             */
+/*   Updated: 2024/11/01 15:32:37 by tkaragoz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#pragma once
+
+#include <iostream>
+#include <string>
+#include <limits>
+
+class ScalarConverter {
+public:
+	static void convert(const std::string &s);
+
+private:
+	ScalarConverter();
+	ScalarConverter(const ScalarConverter &);
+	ScalarConverter& operator=(ScalarConverter const &);
+	~ScalarConverter();
+
+	static bool isChar(const std::string &s);
+	static bool isChar(const std::string &s);
+	static bool isChar(const std::string &s);
+	static bool isChar(const std::string &s);
+	static void printfChar(double value);
+	static void printInt(double value);
+	static void printFloat(double value);
+	static void printDouble(double value);
+
+};
