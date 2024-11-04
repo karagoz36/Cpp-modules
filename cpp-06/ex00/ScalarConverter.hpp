@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 15:04:48 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/11/01 15:32:37 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/11/04 15:50:58 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 #include <iostream>
 #include <string>
 #include <limits>
+#include <cmath>
+#include <iomanip>
+#include <cstdlib>
 
 class ScalarConverter {
 public:
@@ -27,10 +30,10 @@ private:
 	~ScalarConverter();
 
 	static bool isChar(const std::string &s);
-	static bool isChar(const std::string &s);
-	static bool isChar(const std::string &s);
-	static bool isChar(const std::string &s);
-	static void printfChar(double value);
+	static bool isInt(const std::string &s);
+	static bool isFloat(const std::string &s);
+	static bool isDouble(const std::string &s);
+	static void printChar(double value);
 	static void printInt(double value);
 	static void printFloat(double value);
 	static void printDouble(double value);
