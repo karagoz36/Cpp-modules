@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.cpp                                     :+:      :+:    :+:   */
+/*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 16:40:43 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/11/06 13:36:19 by tkaragoz         ###   ########.fr       */
+/*   Created: 2024/11/07 16:21:50 by tkaragoz          #+#    #+#             */
+/*   Updated: 2024/11/07 16:26:25 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
+#pragma once
 
-uintptr_t Serializer::serialize(Data* ptr) {
-	return (reinterpret_cast<uintptr_t>(ptr));
+#include <iostream>
+
+template <typename T>
+void printElement(T&  t) {
+	std::cout << t << " ";
 }
 
-Data* Serializer::deserialize(uintptr_t raw) {
-	return (reinterpret_cast<Data*>(raw));
+void doubleValue(int& x) {
+	x *= 2;
 }
 
-Serializer::Serializer() {}
-Serializer::~Serializer() {}
-Serializer::Serializer(const Serializer&) {}
-Serializer& Serializer::operator=(const Serializer&) { return (*this);}
+void toUpperCase(char& c) {
+	if (c >= 'a' && c <= 'z') {
+		c -= ('a' - 'A');
+	}
+}
+
+void increment(float& f) {
+	f += 1.0f;
+}

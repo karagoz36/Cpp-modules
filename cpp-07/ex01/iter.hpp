@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.cpp                                     :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 16:40:43 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/11/06 13:36:19 by tkaragoz         ###   ########.fr       */
+/*   Created: 2024/11/07 14:58:58 by tkaragoz          #+#    #+#             */
+/*   Updated: 2024/11/07 16:17:58 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
+#pragma once
 
-uintptr_t Serializer::serialize(Data* ptr) {
-	return (reinterpret_cast<uintptr_t>(ptr));
+template <typename T>
+
+void iter(T* arr, int len, void (*f)(T&)) {
+	for (int i = 0; i < len; i++) {
+		f(arr[i]);
+	}
 }
-
-Data* Serializer::deserialize(uintptr_t raw) {
-	return (reinterpret_cast<Data*>(raw));
-}
-
-Serializer::Serializer() {}
-Serializer::~Serializer() {}
-Serializer::Serializer(const Serializer&) {}
-Serializer& Serializer::operator=(const Serializer&) { return (*this);}
