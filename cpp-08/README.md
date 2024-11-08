@@ -9,3 +9,17 @@
 | **Cache Efficiency**     | High                                     | Low                                         | Medium                                              | High                                     |
 | **Ordering**             | Stored in insertion order                | Stored in insertion order                   | Automatically ordered by key                        | None                                      |
 | **Best Use Cases**       | Array-like structures, random access     | Frequent insertions/deletions               | Key-value pairs, fast lookup requirements           | LIFO (Last In First Out) operations       |
+
+
+
+| Özellik                | `std::vector`                               | `std::list`                                 | `std::map`                                          | `std::stack`                              |
+|------------------------|---------------------------------------------|---------------------------------------------|-----------------------------------------------------|-------------------------------------------|
+| **Veri Saklama**       | Ardışık, dizi yapısında                     | Dağınık, çift yönlü bağlı liste             | Anahtar-değer çiftleri olarak sıralı                 | Yığının üstüne eklenen elemanlar          |
+| **Rastgele Erişim**    | Evet, `O(1)`                                | Hayır, `O(n)`                               | Hayır, yalnızca anahtar ile erişim `O(log n)`       | Hayır, yalnızca en üst eleman erişilebilir |
+| **Ekleme (Sonuna)**    | `O(1)`                                      | `O(1)`                                      | `O(log n)`                                          | `O(1)`                                   |
+| **Ekleme (Ortaya)**    | `O(n)`                                      | `O(1)`                                      | `O(log n)`                                          | -                                         |
+| **Silme (Orta/Belirli)** | `O(n)`                                    | `O(1)`                                      | `O(log n)`                                          | Yalnızca en üstten `O(1)`                 |
+| **Bellek Kullanımı**   | Az, ardışık blok                            | Fazla, işaretçiler kullanılır               | Orta, ağaç yapısına göre tahsis                      | Az, yalnızca yığındaki elemanlar          |
+| **Önbellek Verimliliği** | Yüksek                                    | Düşük                                       | Orta                                                | Yüksek                                    |
+| **Sıralama**           | Elemanlar eklenme sırasına göre             | Eklenme sırasına göre                       | Anahtar değerine göre otomatik sıralı                | Yok                                       |
+| **En İyi Kullanım Durumları** | Dizi benzeri yapılar, rastgele erişim | Çok ekleme/silme yapılan durumlar           | Anahtar-değer çiftleri, hızlı arama gereksinimleri   | LIFO (Son Giren İlk Çıkar) işlemleri      |
