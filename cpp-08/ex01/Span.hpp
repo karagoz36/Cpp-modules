@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 16:49:27 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/11/11 18:18:31 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/11/11 18:37:47 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,11 @@ public:
 		_numbers.push_back(number);
 	}
 
-	template <typename InputIterator>
-	void addNumbers(InputIterator begin, InputIterator end) {
+	//template <typename InputIterator>
+
+	void addNumbers(/*InputIterator*/ std::vector<int>::iterator begin, /*InputIterator*/ std::vector<int>::iterator end) {
 		if (std::distance(begin, end) + _numbers.size() > _capacity)
-			throw std::out_of_range("Capacity exceeded")
+			throw std::out_of_range("Capacity exceeded");
 		_numbers.insert(_numbers.end(), begin, end);
 	}
 
