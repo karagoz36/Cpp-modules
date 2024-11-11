@@ -6,11 +6,11 @@
 #    By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/21 17:24:53 by tkaragoz          #+#    #+#              #
-#    Updated: 2024/11/07 16:26:12 by tkaragoz         ###   ########.fr        #
+#    Updated: 2024/11/11 15:23:58 by tkaragoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = iter
+NAME = array
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
