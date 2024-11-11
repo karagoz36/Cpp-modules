@@ -6,7 +6,7 @@
 #    By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/21 17:24:53 by tkaragoz          #+#    #+#              #
-#    Updated: 2024/11/08 15:32:30 by tkaragoz         ###   ########.fr        #
+#    Updated: 2024/11/11 22:42:26 by tkaragoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = span
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	main.cpp
+SRCS =	main.cpp Span.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
