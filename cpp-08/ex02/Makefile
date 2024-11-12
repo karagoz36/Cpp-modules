@@ -6,16 +6,16 @@
 #    By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/21 17:24:53 by tkaragoz          #+#    #+#              #
-#    Updated: 2024/11/11 22:42:26 by tkaragoz         ###   ########.fr        #
+#    Updated: 2024/11/12 15:35:13 by tkaragoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = span
+NAME = MutantStack
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	main.cpp Span.cpp
+SRCS =	main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
