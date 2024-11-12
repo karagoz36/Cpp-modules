@@ -1,0 +1,10 @@
+{
+	"files.associations": {
+		"compare": "cpp",
+		"*.tcc": "cpp",
+		"limits": "cpp",
+		"tuple": "cpp",
+		"type_traits": "cpp",
+		"iostream": "cpp"
+	}
+}
