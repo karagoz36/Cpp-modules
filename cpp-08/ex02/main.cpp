@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 23:16:50 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/11/12 15:58:22 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/11/12 16:09:42 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int main()
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
-	//[...]
 	mstack.push(0);
 
 	std::cout << "Stack elements:" << std::endl;
@@ -49,26 +48,22 @@ int main()
 std::cout << "----------------" << std::endl;
 	std::list<int> mlist;
 
-	// Eleman ekleme ve çıkarma işlemleri
 	mlist.push_back(5);
 	mlist.push_back(17);
-	std::cout << mlist.back() << std::endl; // `top()` yerine `back()` kullanılır
+	std::cout << mlist.back() << std::endl;
 	mlist.pop_back();
 	std::cout << mlist.size() << std::endl;
 
 	mlist.push_back(3);
 	mlist.push_back(5);
 	mlist.push_back(737);
-	//[...]
 	mlist.push_back(0);
 
-	// İteratörler ile elemanlara erişim
 	std::cout << "List elements:" << std::endl;
 	std::list<int>::iterator lit = mlist.begin();
 	std::list<int>::iterator lite = mlist.end();
 	++lit;
 	--lit;
-
 	while (lit != lite) {
 		std::cout << *lit << std::endl;
 		++lit;
@@ -79,9 +74,5 @@ std::cout << "----------------" << std::endl;
 		std::cout << *lrit << std::endl;
 	}
 
-	// std::list'i std::stack'e kopyalama
-	std::stack<int, std::list<int> > ls(mlist);
-
 	return 0;
-
 }
