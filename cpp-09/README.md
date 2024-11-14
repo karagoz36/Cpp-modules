@@ -1,5 +1,6 @@
 # Algorithm Comparison: Insertion Sort, Merge Sort, and Ford-Johnson Merge-Insertion Sort
 
+
 | **Feature**                 | **Insertion Sort**       | **Merge Sort**                   | **Ford-Johnson Merge-Insertion Sort**            |
 |-----------------------------|--------------------------|----------------------------------|--------------------------------------------------|
 | **Time Complexity (Average)** | O(n²)                  | O(n log n)                       | O(n log n - n)                                   |
@@ -19,7 +20,10 @@
 
 
 
+
+
 # Algoritma Karşılaştırması: Insertion Sort, Merge Sort ve Ford-Johnson Merge-Insertion Sort
+
 
 | **Özellik**                 | **Insertion Sort**       | **Merge Sort**                   | **Ford-Johnson Merge-Insertion Sort**            |
 |-----------------------------|--------------------------|----------------------------------|--------------------------------------------------|
