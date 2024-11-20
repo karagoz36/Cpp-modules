@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:35:27 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/11/14 17:02:11 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/11/20 16:00:31 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ public:
 	PmergeMe(const PmergeMe &);
 	PmergeMe& operator=(const PmergeMe& other);
 	~PmergeMe();
-
-	void sortAndTimeVector(const std::vector<int>& data);
-	void sortAndTimeDeque(const std::deque<int>& data);
 
 	class PmergeVector {
 	private:
