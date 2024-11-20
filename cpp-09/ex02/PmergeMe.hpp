@@ -6,14 +6,19 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:35:27 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/11/20 16:00:31 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/11/20 22:00:23 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#include <iostream>
 #include <vector>
 #include <deque>
+#include <stack>
+#include <ctime>
+#include <exception>
+#include <cstdlib>
 class PmergeMe {
 public:
 	PmergeMe();
@@ -45,9 +50,9 @@ public:
 	public:
 		PmergeVector();
 		~PmergeVector();
-		void applyMergeInsertSort(char **av);
 		void printBefore();
 		void printAfter();
+		void applyMergeInsertSort(char **av);
 	};
 
 	class exception : public std::exception {

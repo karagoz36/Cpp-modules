@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:35:48 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/11/20 20:01:55 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/11/20 22:02:13 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@ PmergeMe& PmergeMe::operator=(const PmergeMe& other) {
 }
 
 PmergeMe::~PmergeMe() {}
+
+PmergeMe::PmergeVector::PmergeVector() {}  // Boş yapıcı tanımı.
+
+PmergeMe::PmergeVector::~PmergeVector() {} // Boş yıkıcı tanımı.
+
+PmergeMe::exception::exception() {}
+
+PmergeMe::exception::~exception() throw() {}
 
 const char *PmergeMe::exception::what() const throw() {
 	return ("Error");
@@ -72,8 +80,8 @@ void PmergeMe::PmergeVector::createVectorPairs() {
 }
 
 void PmergeMe::PmergeVector::sortVectorPairs() {
-	unsigned int	i;
-	int				tmp;
+	size_t	i;
+	int		tmp;
 
 	i = 0;
 	while (i < this->vecPair.size()) {
@@ -87,20 +95,20 @@ void PmergeMe::PmergeVector::sortVectorPairs() {
 }
 
 void PmergeMe::PmergeVector::merge(std::vector<std::pair<int, int> > &array, int begin, int mid, int end) {
-	int	leftIndex = 0;
-	int	rigtIndex = 0;
-	int	mergedIndex = begin;
+	size_t	leftIndex = 0;
+	size_t	rightIndex = 0;
+	size_t	mergedIndex = begin;
 
 	std::vector<std::pair<int, int> > leftArray(array.begin() + begin, array.begin() + mid + 1);
 	std::vector<std::pair<int, int> > rightArray(array.begin() + mid + 1, array.begin() + end + 1);
 
-	while (leftIndex < leftArray.size() && rigtIndex < rightArray.size()) {
-		if (leftArray[leftIndex].first <= rightArray[rigtIndex].first) {
+	while (leftIndex < leftArray.size() && rightIndex < rightArray.size()) {
+		if (leftArray[leftIndex].first <= rightArray[rightIndex].first) {
 			array[mergedIndex] = leftArray[leftIndex];
 			leftIndex++;
 		} else {
-			array[mergedIndex] = rightArray[rigtIndex];
-			rigtIndex++;
+			array[mergedIndex] = rightArray[rightIndex];
+			rightIndex++;
 		}
 		mergedIndex++;
 	}
@@ -109,9 +117,9 @@ void PmergeMe::PmergeVector::merge(std::vector<std::pair<int, int> > &array, int
 		leftIndex++;
 		mergedIndex++;
 	}
-	while (rigtIndex < rightArray.size()) {
-		array[mergedIndex] = rightArray[rigtIndex];
-		rigtIndex++;
+	while (rightIndex < rightArray.size()) {
+		array[mergedIndex] = rightArray[rightIndex];
+		rightIndex++;
 		mergedIndex++;
 	}
 }
@@ -128,7 +136,7 @@ void PmergeMe::PmergeVector::mergeSort(std::vector<std::pair<int, int> > &array,
 }
 
 void PmergeMe::PmergeVector::createMainChainAndPend() {
-	int	i = 0;
+	size_t	i = 0;
 
 	mainChain.push_back(this->vecPair.at(0).second); // adds to mainchain first element of first pair
 
@@ -143,7 +151,7 @@ void PmergeMe::PmergeVector::insertToMainChain() {
 	std::vector<int>::iterator it;
 	int target;
 	int endPos;
-	int addedCount;
+	int addedCount = 0;
 	int pos;
 
 	this->genPositions();
@@ -185,10 +193,10 @@ int PmergeMe::PmergeVector::binarySearch(std::vector<int> array, int target, int
 }
 
 void PmergeMe::PmergeVector::genPositions() {
-	int	val = 1;
+	size_t	val = 1;
 	int	pos;
 	int	lastPos = 1;
-	int	i = 0;
+	size_t	i = 0;
 
 	if (this->pend.empty())
 		return ;
@@ -229,4 +237,16 @@ int PmergeMe::PmergeVector::calculjacobSequence(int n) {
 	else if (n == 1)
 		return (1);
 	return (calculjacobSequence(n - 1) + 2 * calculjacobSequence(n - 2));
+}
+
+void PmergeMe::PmergeVector::printBefore()
+{
+	for (unsigned int i = 0; i < this->vec.size(); i++)
+		std::cout << this->vec.at(i) << " ";
+}
+
+void PmergeMe::PmergeVector::printAfter()
+{
+	for (unsigned int i = 0; i < mainChain.size(); i++)
+		std::cout << this->mainChain.at(i) << " ";
 }

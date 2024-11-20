@@ -5,57 +5,62 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 15:35:56 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/11/14 15:38:47 by tkaragoz         ###   ########.fr       */
+/*   Created: 2024/11/20 21:40:26 by tkaragoz          #+#    #+#             */
+/*   Updated: 2024/11/20 21:43:19 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PmergeMe.hpp"
-#include <iostream>
-#include <vector>
-#include <deque>
-#include <sstream>
-#include <string>
+#include "PmergeMe.hpp"  // FordJohnsonAlgorithm sınıfını içeren başlık dosyasını dahil eder.
+#include <ctime>  // Zaman ölçüm işlemleri için <ctime> kütüphanesini ekler.
 
-int main(int argc, char* argv[]) {
-    if (argc < 2) {
-        std::cerr << "Error: Please provide a sequence of positive integers." << std::endl;
-        return 1;
-    }
+int main(int ac, char *av[])
+{
+	clock_t timeVec;  // Vektör tabanlı sıralama süresini ölçmek için saat değişkeni.
+	// clock_t timeDeq;  // Deque tabanlı sıralama süresini ölçmek için saat değişkeni.
+	PmergeMe::PmergeVector pmVec;  // PmergeVector sınıfından bir nesne oluşturur.
+	//PmergeMe::PmergeDeque pmDeq;  // PmergeDeque sınıfından bir nesne oluşturur.
 
-    std::vector<int> vecData;
-    std::deque<int> deqData;
+	if (ac == 1)  // Eğer komut satırı argümanları yoksa (sadece program adı verilmişse).
+	{
+		// Kullanıcıya doğru kullanımı gösteren bir hata mesajı verir.
+		std::cerr << "usage: " << av[0] << " ...numbers" << std::endl;
+		return (1);  // Program hatalı çalıştıysa 1 döner.
+	}
 
-    for (int i = 1; i < argc; ++i) {
-        int number;
-        std::istringstream iss(argv[i]);
-        if (!(iss >> number) || number < 0) {
-            std::cerr << "Error: Invalid input. Only positive integers are allowed." << std::endl;
-            return 1;
-        }
-        vecData.push_back(number);
-        deqData.push_back(number);
-    }
+	try  // Hataların yakalanması için try-catch bloğu kullanılır.
+	{
+		// Vektör tabanlı sıralama işlemi süresini ölçer.
+		timeVec = clock();  // Başlangıç zamanı.
+		pmVec.applyMergeInsertSort(av);  // Vektör tabanlı sıralama işlemini çalıştırır.
+		timeVec = clock() - timeVec;  // Geçen süreyi hesaplar.
 
-    PmergeMe sorter;
+		// // Deque tabanlı sıralama işlemi süresini ölçer.
+		// timeDeq = clock();  // Başlangıç zamanı.
+		// pmDeq.applyMergeInsertSort(av);  // Deque tabanlı sıralama işlemini çalıştırır.
+		// timeDeq = clock() - timeDeq;  // Geçen süreyi hesaplar.
 
-    // Displaying unsorted data
-    std::cout << "Unsorted data: ";
-    for (std::vector<int>::iterator it = vecData.begin(); it != vecData.end(); ++it) {
-        std::cout << *it << " ";
-    }
-    std::cout << std::endl;
+		// Sıralama öncesi diziyi yazdırır.
+		std::cout << "Before: ";
+		pmVec.printBefore();
+		std::cout << std::endl;
 
-    // Sorting and timing
-    sorter.sortAndTimeVector(vecData);
-    sorter.sortAndTimeDeque(deqData);
+		// Sıralama sonrası diziyi yazdırır.
+		std::cout << "After: ";
+		pmVec.printAfter();
+		std::cout << std::endl;
 
-    // Displaying sorted data
-    std::cout << "Sorted data: ";
-    for (std::vector<int>::iterator it = vecData.begin(); it != vecData.end(); ++it) {
-        std::cout << *it << " ";
-    }
-    std::cout << std::endl;
+		// Vektör tabanlı sıralama için geçen süreyi milisaniye cinsinden yazdırır.
+		std::cout << "Time to process a range of " << ac - 1 << " elements with std::vector : "
+		          << (float)timeVec * 1000 / CLOCKS_PER_SEC << " ms" << std::endl;
 
-    return 0;
+		// // Deque tabanlı sıralama için geçen süreyi milisaniye cinsinden yazdırır.
+		// std::cout << "Time to process a range of " << ac - 1 << " elements with std::deque : "
+		//           << (float)timeDeq * 1000 / CLOCKS_PER_SEC << " ms" << std::endl;
+	}
+	catch (const std::exception &e)  // Özel bir durum (exception) meydana gelirse.
+	{
+		std::cerr << e.what() << '\n';  // Hata mesajını standart hata çıkışına yazdırır.
+	}
+
+	return 0;  // Program başarıyla çalıştıysa 0 döner.
 }
