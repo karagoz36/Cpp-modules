@@ -6,7 +6,7 @@
 /*   By: tkaragoz <tkaragoz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:19:46 by tkaragoz          #+#    #+#             */
-/*   Updated: 2024/11/13 15:45:27 by tkaragoz         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:57:28 by tkaragoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,44 @@ void BitcoinExchange::loadDatabase(const std::string& dbFile) {
 		std::string date;
 		double rate;
 		if (std::getline(iss, date, ',') && iss >> rate) {
-			exchangeRates[date] = rate;
+			if (isValidDate(date)) {
+				exchangeRates[date] = rate;
+			} else {
+				std::cerr << "Skipping invalid date: " << date << std::endl;
+			}
 		}
 	}
+}
+
+bool BitcoinExchange::isValidDate(const std::string& date) const {
+	int y, m, d, maxDay;
+
+	if (sscanf(date.c_str(), "%4d-%2d-%2d", &y, &m, &d) != 3)
+		return false;
+	else if (y < 2009 || (y > 2024 || (y == 2024 && m > 11)))
+		return false;
+	else if (m < 1 || m > 12)
+		return false;
+	switch (m) {
+		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+			maxDay = 31;
+			break;
+		case 4: case 6: case 9: case 11:
+			maxDay = 30;
+			break;
+		case 2:
+			maxDay = isLeapYear(y) ? 29 : 28;
+			break;
+		default:
+			return (false);
+	}
+	if (d < 1 || d > maxDay)
+		return (false);
+	return (true);
+}
+
+bool BitcoinExchange::isLeapYear(int year) const {
+	return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 }
 
 std::string BitcoinExchange::findClosestDate(const std::string& date) {
